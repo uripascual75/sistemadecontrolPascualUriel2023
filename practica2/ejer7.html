@@ -1,0 +1,197 @@
+<html>
+
+<head>
+    <style>
+            .container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .cuadro {
+      border: 1px solid #000000;
+      padding: 10px;
+      width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .cuadro h2 {
+      margin-top: 0;
+    }
+
+    .cuadro label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .cuadro textarea {
+      width: 100%;
+      height: 100px;
+    }
+
+    .cuadro .contador-visitas {
+      margin-top: 10px;
+    }
+
+    .cuadro-externo {
+      border: 1px solid #000000;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+        body {
+            background-color: powderblue;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+            #temas-interes {
+           overflow-y: scroll;
+           max-height: 150px;
+           border: 1px solid #000000;
+           padding: 5px;
+           width: 200px;
+           background-color: white;
+        }
+        .formulario {
+      border: 1px solid #000000;
+      padding: 10px;
+      width: 400px;
+      position: relative;
+         }
+         .formulario h2 {
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background-color: #fff;
+      padding: 0 10px;
+    }
+    </style>
+    <title>ejercicio7</title>
+</head>
+
+<body>
+    <h1>EJERCICIO 7 FORMULARIO AVANZADO</h1>
+    <br>
+    <p><b>PUNTO 1</b></p>
+    <br>
+    <div>
+        <h2>Datos Personales</h2>
+        <form class="formulario">
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" name="provincia">
+                <option>Seleccionar provincia</option>
+                <option>Buenos Aires</option>
+                <option>Catamarca</option>
+                <option>Chaco</option>
+                <option>Chubut</option>
+                <option>Córdoba</option>
+                <option>Corrientes</option>
+                <option>Entre Ríos</option>
+                <option>Formosa</option>
+                <option>Jujuy</option>
+                <option>La Pampa</option>
+                <option>La Rioja</option>
+                <option>Mendoza</option>
+                <option>Misiones</option>
+                <option>Neuquén</option>
+                <option>Río Negro</option>
+                <option>Salta</option>
+                <option>San Juan</option>
+                <option>San Luis</option>
+                <option>Santa Cruz</option>
+                <option>Santa Fe</option>
+                <option>Santiago del Estero</option>
+                <option>Tierra del Fuego</option>
+                <option>Tucumán</option>
+            </select><br><br>
+    
+            <p>Fecha de Nacimiento</p>
+            
+                <label for="dia"></label>
+                <input type="number" id="dia" name="dia" min="1" max="31" required>
+            
+           
+                <label for="mes">de</label>
+                <select id="mes" name="mes">
+                    <option>Seleccionar mes</option>
+                    <option>Enero</option>
+                    <option>Febrero</option>
+                    <option>Marzo</option>
+                    <option>Abril</option>
+                    <option>Mayo</option>
+                    <option>Junio</option>
+                    <option>Julio</option>
+                    <option>Agosto</option>
+                    <option>Septiembre</option>
+                    <option>Octubre</option>
+                    <option>Noviembre</option>
+                    <option>Diciembre</option>
+                </select>
+            
+            
+                <label for="año">de</label>
+                <input type="number" id="año" name="año" min="1900" max="2099" required>
+            <br><br>
+    
+            <label for="tema">Tema de Interés:</label>
+            <div id="temas-interes">
+                <p>Administracion de Bases de Datos</p>
+                <p>Analisis y Programacion</p>
+                <p>Arquitectura</p>
+                <p>Calidad</p>
+                <p>ERP, CRM,  Business Intelligence</p>
+                <p>Electronica</p>
+            </div>
+            <br><br>
+        </form>
+    </div>
+    <br><br><br>
+    <p><b>PUNTO 2</b></p>
+    <div class="cuadro">
+        <h2>Datos Básicos</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+    
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion"></textarea><br><br>
+    
+            <label for="foto">Foto:</label>
+            <input type="text" id="foto-nombre" readonly><br>
+            <input type="file" id="foto" name="foto"><br><br>
+    
+            <div class="contador-visitas">
+                <label for="contador">Añadir contador de visitas:</label>
+                <input type="checkbox" id="contador" name="contador">
+            </div>
+        </form>
+    </div>
+    
+    <div class="cuadro">
+        <h2>Datos Económicos</h2>
+        <form>
+            <label for="precio">Precio (Euros):</label>
+            <input type="number" id="precio" name="precio" min="0" step="0.01" required><br><br>
+    
+            <label for="impuestos">Impuestos:</label>
+            <select id="impuestos" name="impuestos">
+                <option value="4">4%</option>
+                <option value="7">7%</option>
+                <option value="16">16%</option>
+                <option value="25">25%</option>
+            </select><br><br>
+    
+        <label>Promoción:</label>
+        <label for="ninguno"><input type="radio" id="ninguno" name="promocion" value="ninguno"> Ninguno</label><br>
+        <label for="transporte"><input type="radio" id="transporte" name="promocion" value="transporte"> Transporte
+            Gratuito</label><br>
+        <label for="descuento"><input type="radio" id="descuento" name="promocion" value="descuento"> Descuento 5%</label>
+        </form>
+    </div>
+</body>
+
+</html>

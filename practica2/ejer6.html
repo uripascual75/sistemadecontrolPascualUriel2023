@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+    </style>
+    <title>ejercicio6</title>
+</head>
+
+<body>
+    <h1>EJERCICIO 6 FORMULARIO</h1>
+    <br>
+    <p><b>PUNTO 1</b></p>
+<form method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" maxlength="30" required><br><br>
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" name="apellido" maxlength="80" required><br><br>
+
+    <label for="contraseña">Contrasena</label>
+    <input type="password" id="contraseña" name="contraseña" maxlength="10" required><br><br>
+
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" pattern="[0-9]{7,8}" required><br><br>
+
+    <label>Sexo</label>
+    <div class="sexo">
+        <input type="radio" id="hombre" name="sexo" value="hombre" checked>
+        <label for="hombre">Hombre</label>
+    </div>
+    <div class="sexo">
+        <input type="radio" id="mujer" name="sexo" value="mujer">
+        <label for="mujer">Mujer</label>
+    </div>
+
+    <label for="foto">Incluir Mi Foto</label>
+    <input type="file" id="foto" name="foto"><br><br>
+
+    <label for="boletin">Suscribirme al boletin de novedades:</label>
+    <input type="checkbox" id="boletin" name="boletin" checked><br><br>
+
+    <input type="submit" value="Guardar Cambios">
+    <input type="reset" value="Borrar los datos introducidos">
+</form>
+</body>
+
+</html>
