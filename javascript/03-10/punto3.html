@@ -1,0 +1,43 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+content="width=device-width,
+initial-scale=1-0">
+	<title>Pascual Uriel</title>
+</head>
+<body>
+	<h1>Calculadora de Triangulos</h1>
+	<form>
+		<label for="base">Base:</label>
+		<input type="number" id="base" required><br>
+
+		<label for="altura">Altura:</label>
+		<input type="number" id="altura" required><br>
+
+		<button type="button" onclick="calcular()">Calcular</button>
+	</form>
+
+	<h2>Resultados</h2>
+	<p><strong>Hipotenusa:</strong><span id="hipotenusaResultado"></span></p>
+	<p><strong>Perimetro:</strong><span id="perimetroResultado"></span></p>
+	<p><strong>Superficie:</strong><span id="superficieResultado"></span></p>
+	
+	<script>
+		function calcular(){
+		const base = parseFloat(document.getElementById('base').value);
+		const altura = parseFloat(document.getElementById('altura').value);
+
+		const hipotenusa = Math.sqrt(base ** 2 + altura ** 2);
+		const perimetro = base * altura + hipotenusa;
+		const superficie= (base * altura) / 2;
+
+		document.getElementById('hipotenusaResultado').textContent = hipotenusa.toFixed(2);
+		document.getElementById('perimetroResultado').textContent = perimetro.toFixed(2);
+		document.getElementById('superficieResultado').textContent = superficie.toFixed(2);
+		}
+	</script>
+	<br>
+	<a href="../../index.html">Inicio</a>
+</body>
+</html>

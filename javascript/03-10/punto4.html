@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Pascual Uriel</title>
+    <title>Verificar Triángulo</title>
+    <meta charset="UTF-8">
+    <script>
+        function esTriangulo(a, b, c) {
+            return (a + b > c) && (a + c > b) && (b + c > a);
+        }
+
+        function verificarTriangulo() {
+            var lado1 = parseFloat(document.getElementById("lado1").value);
+            var lado2 = parseFloat(document.getElementById("lado2").value);
+            var lado3 = parseFloat(document.getElementById("lado3").value);
+
+            var resultado = esTriangulo(lado1, lado2, lado3);
+
+            if (resultado) {
+                document.getElementById("resultado").innerHTML = "Es un triángulo";
+            } else {
+                document.getElementById("resultado").innerHTML = "No es un triángulo";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Verificar Triángulo</h1>
+    <label>Lado 1: <input type="number" id="lado1"></label><br>
+    <label>Lado 2: <input type="number" id="lado2"></label><br>
+    <label>Lado 3: <input type="number" id="lado3"></label><br>
+    <button onclick="verificarTriangulo()">Verificar</button><br>
+    <div id="resultado"></div>
+<br>
+<a href="../../index.html">Inicio</a>
+</body>
+</html>

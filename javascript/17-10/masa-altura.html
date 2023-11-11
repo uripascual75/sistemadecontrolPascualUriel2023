@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Pascual Uriel</title>
+    <meta charset="UTF-8">
+    <script>
+        function pedirDatos() {
+            var masa = parseFloat(prompt("Ingrese la masa del cuerpo (en kg):"));
+            var altura = parseFloat(prompt("Ingrese la altura desde la que cae el cuerpo (en metros):"));
+
+            var energiaPotencial = calcularEp(masa, altura);
+            var velocidadAlSuelo = calcularVelocidadAlSuelo(energiaPotencial, masa);
+
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Energía Potencial: " + energiaPotencial.toFixed(2) + " julios <br>";
+            resultado.innerHTML += "Velocidad al llegar al suelo: " + velocidadAlSuelo.toFixed(2) + " m/s";
+
+            if (velocidadAlSuelo > 100) {
+                resultado.innerHTML += "<br>Que rapido";
+            } else {
+                resultado.innerHTML += "<br>Va lento.";
+            }
+        }
+
+        function calcularEp(masa, altura) {
+            var gravedad = 9.81; // Aceleración debido a la gravedad en m/s^2
+            var energiaPotencial = masa * gravedad * altura;
+            return energiaPotencial;
+        }
+
+        function calcularVelocidadAlSuelo(ep, masa) {
+            var velocidad = Math.sqrt(2 * ep / masa);
+            return velocidad;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculos de Energía Potencial y Velocidad</h1>
+    <button onclick="pedirDatos()">Calcular</button><br>
+    <div id="resultado"></div>
+    <br>
+    <a href="../../index.html">Inicio</a>
+</body>
+
+</html>

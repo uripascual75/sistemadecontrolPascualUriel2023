@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Pascual Uriel</title>
+    <script>
+        function calcularCircuitos() {
+            var resistencia = parseFloat(document.getElementById("resistencia").value);
+            var inductancia = parseFloat(document.getElementById("inductancia").value);
+            var capacitancia = parseFloat(document.getElementById("capacitancia").value);
+            var frecuencia = parseFloat(document.getElementById("frecuencia").value);
+
+            var XL = 2 * Math.PI * frecuencia * inductancia; // Reactancia inductiva (XL)
+            var XC = 1 / (2 * Math.PI * frecuencia * capacitancia); // Reactancia capacitiva (XC)
+            var moduloZ = Math.sqrt(Math.pow(resistencia, 2) + Math.pow(XL - XC, 2)); // Módulo de la impedancia (|Z|)
+            var fase = Math.atan((XL - XC) / resistencia); // Ángulo de fase (phi)
+            var parteReal = resistencia; // Parte real de la impedancia
+            var parteImaginaria = XL - XC; // Parte imaginaria de la impedancia
+
+            document.getElementById("XL").innerHTML = "XL: " + XL.toFixed(2) + " ohmios";
+            document.getElementById("XC").innerHTML = "XC: " + XC.toFixed(2) + " ohmios";
+            document.getElementById("moduloZ").innerHTML = "Módulo de Z: " + moduloZ.toFixed(2) + " ohmios";
+            document.getElementById("fase").innerHTML = "Ángulo de fase (phi): " + (fase * (180 / Math.PI)).toFixed(2) + " grados";
+            document.getElementById("parteReal").innerHTML = "Parte Real de Z: " + parteReal.toFixed(2) + " ohmios";
+            document.getElementById("parteImaginaria").innerHTML = "Parte Imaginaria de Z: " + parteImaginaria.toFixed(2) + " ohmios";
+        }
+    </script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Cálculos de Circuito RLC </h1>
+    <label>Resistencia (ohmios): <input type="number" id="resistencia"></label><br>
+    <label>Inductancia (henrios): <input type="number" id="inductancia"></label><br>
+    <label>Capacitancia (faradios): <input type="number" id="capacitancia"></label><br>
+    <label>Frecuencia (hertzios): <input type="number" id="frecuencia"></label><br>
+    <button onclick="calcularCircuitos()">Calcular</button><br>
+    <div id="XL"></div>
+    <div id="XC"></div>
+    <div id="moduloZ"></div>
+    <div id="fase"></div>
+    <div id="parteReal"></div>
+    <div id="parteImaginaria"></div>
+<br>
+<a href="../../index.html">Inicio</a>
+</body>
+</html>
